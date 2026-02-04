@@ -2,35 +2,6 @@ import numpy as np
 
 def adam_step(param, grad, m, v, t,
               lr=0.001, beta1=0.9, beta2=0.999, eps=1e-8):
-    """
-    Perform one Adam optimization step.
-
-    Parameters
-    ----------
-    param : float or np.ndarray
-        Current parameter(s) θ_{t-1}
-    grad : float or np.ndarray
-        Current gradient g_t
-    m : float or np.ndarray
-        First moment estimate m_{t-1}
-    v : float or np.ndarray
-        Second moment estimate v_{t-1}
-    t : int
-        Time step (1-based)
-    lr : float
-        Learning rate α
-    beta1 : float
-        Exponential decay rate for first moment
-    beta2 : float
-        Exponential decay rate for second moment
-    eps : float
-        Small constant for numerical stability
-
-    Returns
-    -------
-    param_new, m_new, v_new : same type/shape as inputs
-    """
-
     # Convert to numpy arrays for vectorized ops
     param = np.asarray(param, dtype=float)
     grad = np.asarray(grad, dtype=float)
